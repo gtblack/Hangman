@@ -8,7 +8,7 @@ import java.util.Scanner;
 
 public class WordsHelper {
 
-    private static final String WORDS_FILE_LOCATION = "words.txt";
+    private static final String WORDS_FILE_LOCATION = "data/words.txt";
 
     private List<String> dictionary;
 
@@ -34,7 +34,7 @@ public class WordsHelper {
 
     private List<String> readWordsFromFile(String fileLoc) throws IOException {
         List<String> words = new ArrayList<>();
-        FileReader fr = new FileReader(fileLoc);
+        FileReader fr = new FileReader(getClass().getResource(fileLoc).getFile());
         Scanner sc = new Scanner(fr);
         while (sc.hasNext()) {
             words.add(sc.nextLine());

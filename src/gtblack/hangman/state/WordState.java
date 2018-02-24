@@ -1,6 +1,7 @@
 package gtblack.hangman.state;
 
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
@@ -10,7 +11,7 @@ public class WordState {
     private Set<Integer> openedPositions;
 
     public WordState() {
-        openedPositions = new ArrayList<>();
+        openedPositions = new HashSet<>();
     }
 
     public String getCurrentWord() {
@@ -27,7 +28,11 @@ public class WordState {
         }
     }
 
-    public boolean gameEnded() {
+    public boolean allRevealed() {
         return currentWord.length() == openedPositions.size();
+    }
+
+    public Set<Integer> getOpenedPositions() {
+        return openedPositions;
     }
 }

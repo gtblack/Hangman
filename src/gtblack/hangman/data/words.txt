@@ -1,0 +1,10 @@
+elephant
+giraffe
+tiger
+human
+zebra
+monkey
+horse
+sheep
+goose
+mouse
