@@ -11,6 +11,10 @@ public class WordState {
     private Set<Integer> openedPositions;
 
     public WordState() {
+        init();
+    }
+
+    public void init() {
         openedPositions = new HashSet<>();
     }
 

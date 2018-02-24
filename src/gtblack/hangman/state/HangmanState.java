@@ -36,6 +36,7 @@ public class HangmanState {
     public void startNewGame() {
         lives = INITIAL_GUESSES;
         gameState = GameState.STARTED;
+        wordState.init();
         wordState.setCurrentWord(wordsHelper.randomWord());
     }
 

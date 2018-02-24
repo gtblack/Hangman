@@ -37,16 +37,18 @@ public class Hangman {
                 case STARTED:
                     tempState = GameState.STARTED;
                     System.out.println(hangmanStringFormulator.getWelcomeMessage());
-                    System.out.println(hangmanState.getCurrentWord());
                     processGuess(readNextGuess());
+                    break;
                 case IN_PROGRESS_RIGHT_GUESS:
                     tempState = GameState.IN_PROGRESS_RIGHT_GUESS;
                     System.out.println(hangmanStringFormulator.getRightGuessMessage());
                     processGuess(readNextGuess());
+                    break;
                 case IN_PROGRESS_WRONG_GUESS:
                     tempState = GameState.IN_PROGRESS_WRONG_GUESS;
                     System.out.println(hangmanStringFormulator.getWrongGuessMessage());
                     processGuess(readNextGuess());
+                    break;
                 case GAME_ENDED:
                     if (hangmanState.playerWon()) {
                         System.out.println(hangmanStringFormulator.getVictoryMessage());
@@ -63,10 +65,11 @@ public class Hangman {
                     } else if (!input.equals("y") && !input.equals("n")) {
                         hangmanState.setGameState(GameState.INCORRECT_INPUT);
                     }
-
+                    break;
                 case INCORRECT_INPUT:
                     System.out.println(hangmanStringFormulator.getErrorWrongInputMessage());
                     hangmanState.setGameState(tempState);
+                    break;
             }
         }
 
